@@ -103,8 +103,10 @@ var DateInput = /** @class */ (function (_super) {
             var disableParsed = parseArrayOrValue(disable, dateFormat, localization);
             var markedParsed = parseArrayOrValue(marked, dateFormat, localization);
             var mode = _this.state.mode;
-            // tslint:disable-next-line:no-debugger
-            debugger;
+            // tslint:disable-next-line:no-console
+            console.log('getPicker() ' + dateFormat);
+            // tslint:disable-next-line:no-console
+            console.log('getPicker() ' + mode);
             if (mode === 'year') {
                 return (React.createElement(YearPicker, __assign({}, pickerProps, { disable: getDisabledYears(disableParsed) })));
             }
@@ -145,8 +147,9 @@ var DateInput = /** @class */ (function (_super) {
                 var mode = prevState.mode;
                 if (mode === 'day') {
                     // tslint:disable-next-line:no-debugger
-                    debugger;
                     var outValue = moment(value).format('DD/MM/YYYY');
+                    // tslint:disable-next-line:no-console
+                    console.log('handleSelect() ' + outValue);
                     invoke(_this.props, 'onChange', e, __assign({}, _this.props, { value: outValue }));
                 }
                 return {
@@ -167,6 +170,8 @@ var DateInput = /** @class */ (function (_super) {
                     date: parsedValue.date(),
                 });
             }
+            // tslint:disable-next-line:no-console
+            console.log('handleSelect() ' + value);
             invoke(_this.props, 'onChange', e, __assign({}, _this.props, { value: value }));
         };
         var parsedValue = parseValue(props.value, props.dateFormat, props.localization);

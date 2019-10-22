@@ -69,6 +69,8 @@ exports.getInitializer = getInitializer;
 function buildValue(value, initialDate, localization, dateFormat, defaultVal) {
     if (defaultVal === void 0) { defaultVal = moment_1.default(); }
     var valueParsed = parseValue(value, dateFormat, localization);
+    // tslint:disable-next-line:no-console
+    console.log('buildValue ' + valueParsed);
     if (valueParsed) {
         return valueParsed;
     }

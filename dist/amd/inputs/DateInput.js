@@ -113,8 +113,10 @@ define(["require", "exports", "lodash/isNil", "lodash/invoke", "moment", "prop-t
                 var disableParsed = parse_1.parseArrayOrValue(disable, dateFormat, localization);
                 var markedParsed = parse_1.parseArrayOrValue(marked, dateFormat, localization);
                 var mode = _this.state.mode;
-                // tslint:disable-next-line:no-debugger
-                debugger;
+                // tslint:disable-next-line:no-console
+                console.log('getPicker() ' + dateFormat);
+                // tslint:disable-next-line:no-console
+                console.log('getPicker() ' + mode);
                 if (mode === 'year') {
                     return (React.createElement(YearPicker_1.default, __assign({}, pickerProps, { disable: shared_1.getDisabledYears(disableParsed) })));
                 }
@@ -155,8 +157,9 @@ define(["require", "exports", "lodash/isNil", "lodash/invoke", "moment", "prop-t
                     var mode = prevState.mode;
                     if (mode === 'day') {
                         // tslint:disable-next-line:no-debugger
-                        debugger;
                         var outValue = moment_1.default(value).format('DD/MM/YYYY');
+                        // tslint:disable-next-line:no-console
+                        console.log('handleSelect() ' + outValue);
                         invoke_1.default(_this.props, 'onChange', e, __assign({}, _this.props, { value: outValue }));
                     }
                     return {
@@ -177,6 +180,8 @@ define(["require", "exports", "lodash/isNil", "lodash/invoke", "moment", "prop-t
                         date: parsedValue.date(),
                     });
                 }
+                // tslint:disable-next-line:no-console
+                console.log('handleSelect() ' + value);
                 invoke_1.default(_this.props, 'onChange', e, __assign({}, _this.props, { value: value }));
             };
             var parsedValue = parse_1.parseValue(props.value, props.dateFormat, props.localization);
