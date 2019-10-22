@@ -72,6 +72,8 @@ define(["require", "exports", "lodash/isNil", "lodash/isArray", "lodash/isString
         var valueParsed = parseValue(value, dateFormat, localization);
         // tslint:disable-next-line:no-console
         console.log('buildValue ' + valueParsed);
+        // tslint:disable-next-line:no-debugger
+        debugger;
         if (valueParsed) {
             return valueParsed;
         }

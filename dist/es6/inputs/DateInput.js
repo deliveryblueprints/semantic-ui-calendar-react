@@ -146,7 +146,6 @@ var DateInput = /** @class */ (function (_super) {
             _this.setState(function (prevState) {
                 var mode = prevState.mode;
                 if (mode === 'day') {
-                    // tslint:disable-next-line:no-debugger
                     var outValue = moment(value).format(_this.format);
                     // tslint:disable-next-line:no-console
                     console.log('handleSelect() ' + outValue);
@@ -162,6 +161,8 @@ var DateInput = /** @class */ (function (_super) {
         /** Keeps internal state in sync with input field value. */
         _this.onInputValueChange = function (e, _a) {
             var value = _a.value;
+            // tslint:disable-next-line:no-debugger
+            debugger;
             var parsedValue = moment(value, _this.format);
             if (parsedValue.isValid()) {
                 _this.setState({

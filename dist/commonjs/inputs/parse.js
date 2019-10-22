@@ -71,6 +71,8 @@ function buildValue(value, initialDate, localization, dateFormat, defaultVal) {
     var valueParsed = parseValue(value, dateFormat, localization);
     // tslint:disable-next-line:no-console
     console.log('buildValue ' + valueParsed);
+    // tslint:disable-next-line:no-debugger
+    debugger;
     if (valueParsed) {
         return valueParsed;
     }
