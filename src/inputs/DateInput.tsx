@@ -286,7 +286,7 @@ class DateInput extends BaseInput<DateInputProps, DateInputState> {
         mode,
       } = prevState;
       if (mode === 'day') {
-        const outValue = moment(value).format("DD/MM/YYYY");
+        const outValue = moment(value).format('DD/MM/YYYY');
         invoke(this.props, 'onChange', e, { ...this.props, value: outValue });
       }
 
