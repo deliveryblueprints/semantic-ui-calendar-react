@@ -69,7 +69,7 @@ var DateInput = /** @class */ (function (_super) {
         _this.componentDidUpdate = function (prevProps) {
             // update internal date if ``value`` prop changed and successuffly parsed
             if (prevProps.value !== _this.props.value) {
-                var parsed = parseValue(_this.props.value, _this.props.dateFormat, _this.props.localization);
+                var parsed = parseValue(_this.props.value, 'DD/MM/YYYY', _this.props.localization);
                 if (parsed) {
                     _this.setState({
                         year: parsed.year(),
@@ -156,7 +156,7 @@ var DateInput = /** @class */ (function (_super) {
         /** Keeps internal state in sync with input field value. */
         _this.onInputValueChange = function (e, _a) {
             var value = _a.value;
-            var parsedValue = moment(value, _this.props.dateFormat);
+            var parsedValue = moment(value, 'DD/MM/YYYY');
             if (parsedValue.isValid()) {
                 _this.setState({
                     year: parsedValue.year(),
@@ -198,7 +198,7 @@ var DateInput = /** @class */ (function (_super) {
      *  - parse input value
      *  - handle underlying picker change
      */
-    DateInput.defaultProps = __assign({}, BaseInput.defaultProps, { dateFormat: 'DD-MM-YYYY', startMode: 'day', preserveViewMode: true, icon: 'calendar' });
+    DateInput.defaultProps = __assign({}, BaseInput.defaultProps, { dateFormat: 'DD/MM/YYYY', startMode: 'day', preserveViewMode: true, icon: 'calendar' });
     DateInput.propTypes = __assign({}, BaseInputPropTypes, DateRelatedPropTypes, MultimodePropTypes, DisableValuesPropTypes, EnableValuesPropTypes, MarkedValuesPropTypes, MinMaxValuePropTypes, {
         /** Display mode to start. */
         startMode: PropTypes.oneOf(['year', 'month', 'day']),
