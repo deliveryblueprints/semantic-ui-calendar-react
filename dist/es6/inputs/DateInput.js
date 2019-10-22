@@ -66,10 +66,11 @@ var DateInput = /** @class */ (function (_super) {
     __extends(DateInput, _super);
     function DateInput(props) {
         var _this = _super.call(this, props) || this;
+        _this.format = 'DD/MM/YYYY';
         _this.componentDidUpdate = function (prevProps) {
             // update internal date if ``value`` prop changed and successuffly parsed
             if (prevProps.value !== _this.props.value) {
-                var parsed = parseValue(_this.props.value, 'DD/MM/YYYY', _this.props.localization);
+                var parsed = parseValue(_this.props.value, _this.format, _this.props.localization);
                 if (parsed) {
                     _this.setState({
                         year: parsed.year(),
@@ -81,7 +82,6 @@ var DateInput = /** @class */ (function (_super) {
         };
         _this.getPicker = function () {
             var _a = _this.props, value = _a.value, initialDate = _a.initialDate, disable = _a.disable, minDate = _a.minDate, maxDate = _a.maxDate, enable = _a.enable, inline = _a.inline, marked = _a.marked, markColor = _a.markColor, localization = _a.localization, tabIndex = _a.tabIndex, pickerWidth = _a.pickerWidth, pickerStyle = _a.pickerStyle;
-            var dateFormat = 'DD/MM/YYYY';
             var pickerProps = {
                 isPickerInFocus: _this.isPickerInFocus,
                 isTriggerInFocus: _this.isTriggerInFocus,
@@ -93,18 +93,18 @@ var DateInput = /** @class */ (function (_super) {
                 pickerStyle: pickerStyle,
                 onChange: _this.handleSelect,
                 onHeaderClick: _this.switchToPrevMode,
-                initializeWith: buildValue(_this.parseInternalValue(), initialDate, localization, dateFormat),
-                value: buildValue(value, null, localization, dateFormat, null),
-                enable: parseArrayOrValue(enable, dateFormat, localization),
-                minDate: parseValue(minDate, dateFormat, localization),
-                maxDate: parseValue(maxDate, dateFormat, localization),
+                initializeWith: buildValue(_this.parseInternalValue(), initialDate, localization, _this.format),
+                value: buildValue(value, null, localization, _this.format, null),
+                enable: parseArrayOrValue(enable, _this.format, localization),
+                minDate: parseValue(minDate, _this.format, localization),
+                maxDate: parseValue(maxDate, _this.format, localization),
                 localization: localization,
             };
-            var disableParsed = parseArrayOrValue(disable, dateFormat, localization);
-            var markedParsed = parseArrayOrValue(marked, dateFormat, localization);
+            var disableParsed = parseArrayOrValue(disable, _this.format, localization);
+            var markedParsed = parseArrayOrValue(marked, _this.format, localization);
             var mode = _this.state.mode;
             // tslint:disable-next-line:no-console
-            console.log('getPicker() ' + dateFormat);
+            console.log('getPicker() ' + _this.format);
             // tslint:disable-next-line:no-console
             console.log('getPicker() ' + mode);
             if (mode === 'year') {
@@ -147,7 +147,7 @@ var DateInput = /** @class */ (function (_super) {
                 var mode = prevState.mode;
                 if (mode === 'day') {
                     // tslint:disable-next-line:no-debugger
-                    var outValue = moment(value).format('DD/MM/YYYY');
+                    var outValue = moment(value).format(_this.format);
                     // tslint:disable-next-line:no-console
                     console.log('handleSelect() ' + outValue);
                     invoke(_this.props, 'onChange', e, __assign({}, _this.props, { value: outValue }));
@@ -162,7 +162,7 @@ var DateInput = /** @class */ (function (_super) {
         /** Keeps internal state in sync with input field value. */
         _this.onInputValueChange = function (e, _a) {
             var value = _a.value;
-            var parsedValue = moment(value, 'DD/MM/YYYY');
+            var parsedValue = moment(value, _this.format);
             if (parsedValue.isValid()) {
                 _this.setState({
                     year: parsedValue.year(),
@@ -174,7 +174,7 @@ var DateInput = /** @class */ (function (_super) {
             console.log('handleSelect() ' + value);
             invoke(_this.props, 'onChange', e, __assign({}, _this.props, { value: value }));
         };
-        var parsedValue = parseValue(props.value, props.dateFormat, props.localization);
+        var parsedValue = parseValue(props.value, _this.format, props.localization);
         _this.state = {
             mode: props.startMode,
             popupIsClosed: true,

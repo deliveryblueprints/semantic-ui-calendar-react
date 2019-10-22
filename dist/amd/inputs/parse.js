@@ -87,6 +87,8 @@ define(["require", "exports", "lodash/isNil", "lodash/isArray", "lodash/isString
     }
     exports.buildValue = buildValue;
     function dateValueToString(value, dateFormat, locale) {
+        // tslint:disable-next-line:no-debugger
+        debugger;
         if (isString_1.default(value)) {
             return value;
         }

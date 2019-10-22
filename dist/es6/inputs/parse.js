@@ -77,6 +77,8 @@ export function buildValue(value, initialDate, localization, dateFormat, default
     return _defaultVal;
 }
 export function dateValueToString(value, dateFormat, locale) {
+    // tslint:disable-next-line:no-debugger
+    debugger;
     if (isString(value)) {
         return value;
     }

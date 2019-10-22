@@ -86,6 +86,8 @@ function buildValue(value, initialDate, localization, dateFormat, defaultVal) {
 }
 exports.buildValue = buildValue;
 function dateValueToString(value, dateFormat, locale) {
+    // tslint:disable-next-line:no-debugger
+    debugger;
     if (isString_1.default(value)) {
         return value;
     }

@@ -59,6 +59,7 @@ declare class DateInput extends BaseInput<DateInputProps, DateInputState> {
         localization: PropTypes.Requireable<string>;
         hideMobileKeyboard: PropTypes.Requireable<boolean>;
     };
+    format: string;
     constructor(props: DateInputProps);
     componentDidUpdate: (prevProps: DateInputProps) => void;
     render(): JSX.Element;

@@ -108,8 +108,6 @@ var DayPicker = /** @class */ (function (_super) {
     };
     DayPicker.prototype.getCurrentDate = function () {
         /* Return currently selected year and month(string) to display in calendar header. */
-        // tslint:disable-next-line:no-debugger
-        debugger;
         return this.state.date.format('MMMM YYYY');
     };
     DayPicker.prototype.buildCalendarValues = function () {
