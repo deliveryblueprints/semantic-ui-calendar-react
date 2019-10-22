@@ -21,7 +21,7 @@ describe('<DateInput />: handleSelect', () => {
     assert(onChangeFake.calledOnce, '`onChange` callback called once');
     assert.equal(calledWithArgs[0], 'click', 'correct first argument');
     assert(_.isString(calledWithArgs[1].value), 'value is string');
-    assert.equal(calledWithArgs[1].value, '2030-05-03', 'correct value');
+    assert.equal(calledWithArgs[1].value, '03/05/2030', 'correct value');
   });
 
   // TODO: skipped because now mode switches in callback
