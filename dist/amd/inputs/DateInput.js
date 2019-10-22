@@ -90,7 +90,8 @@ define(["require", "exports", "lodash/isNil", "lodash/invoke", "moment", "prop-t
                 }
             };
             _this.getPicker = function () {
-                var _a = _this.props, value = _a.value, initialDate = _a.initialDate, dateFormat = _a.dateFormat, disable = _a.disable, minDate = _a.minDate, maxDate = _a.maxDate, enable = _a.enable, inline = _a.inline, marked = _a.marked, markColor = _a.markColor, localization = _a.localization, tabIndex = _a.tabIndex, pickerWidth = _a.pickerWidth, pickerStyle = _a.pickerStyle;
+                var _a = _this.props, value = _a.value, initialDate = _a.initialDate, disable = _a.disable, minDate = _a.minDate, maxDate = _a.maxDate, enable = _a.enable, inline = _a.inline, marked = _a.marked, markColor = _a.markColor, localization = _a.localization, tabIndex = _a.tabIndex, pickerWidth = _a.pickerWidth, pickerStyle = _a.pickerStyle;
+                var dateFormat = 'DD/MM/YYYY';
                 var pickerProps = {
                     isPickerInFocus: _this.isPickerInFocus,
                     isTriggerInFocus: _this.isTriggerInFocus,
@@ -112,6 +113,8 @@ define(["require", "exports", "lodash/isNil", "lodash/invoke", "moment", "prop-t
                 var disableParsed = parse_1.parseArrayOrValue(disable, dateFormat, localization);
                 var markedParsed = parse_1.parseArrayOrValue(marked, dateFormat, localization);
                 var mode = _this.state.mode;
+                // tslint:disable-next-line:no-debugger
+                debugger;
                 if (mode === 'year') {
                     return (React.createElement(YearPicker_1.default, __assign({}, pickerProps, { disable: shared_1.getDisabledYears(disableParsed) })));
                 }
