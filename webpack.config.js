@@ -24,6 +24,9 @@ const config = {
       },
     ],
   },
+  performance: {
+    hints: false
+  },
   resolve: {
     extensions: ['.webpack.js', '.web.js', '.ts', '.tsx', '.js', 'jsx'],
   },

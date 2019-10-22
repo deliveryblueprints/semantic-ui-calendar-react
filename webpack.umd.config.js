@@ -11,6 +11,9 @@ const config = {
     filename: 'semantic-ui-calendar-react.js',
   },
   mode: 'production',
+  performance: {
+    hints: false
+  },
   module: {
     rules: [
       {
