@@ -151,6 +151,8 @@ define(["require", "exports", "lodash/isNil", "lodash/invoke", "moment", "prop-t
                 _this.setState(function (prevState) {
                     var mode = prevState.mode;
                     if (mode === 'day') {
+                        // tslint:disable-next-line:no-debugger
+                        debugger;
                         var outValue = moment_1.default(value).format('DD/MM/YYYY');
                         invoke_1.default(_this.props, 'onChange', e, __assign({}, _this.props, { value: outValue }));
                     }
