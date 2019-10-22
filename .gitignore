@@ -23,9 +23,11 @@ package-lock.json
 nbproject/private/
 build/
 nbbuild/
-dist/
 nbdist/
 .nb-gradle/
+src/*
+example/*
+test/*
 
 ### OS X ###
 .DS_Store
