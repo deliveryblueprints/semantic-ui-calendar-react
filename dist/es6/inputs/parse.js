@@ -1,6 +1,5 @@
 import isNil from 'lodash/isNil';
 import isArray from 'lodash/isArray';
-import isString from 'lodash/isString';
 import compact from 'lodash/compact';
 import moment from 'moment';
 export var TIME_FORMAT = {
@@ -81,9 +80,9 @@ export function buildValue(value, initialDate, localization, dateFormat, default
 export function dateValueToString(value, dateFormat, locale) {
     // tslint:disable-next-line:no-debugger
     debugger;
-    if (isString(value)) {
-        return value;
-    }
+    // if (isString(value)) {
+    //   return value;
+    // }
     if (moment.isMoment(value)) {
         var _value = value.clone();
         _value.locale(locale);
