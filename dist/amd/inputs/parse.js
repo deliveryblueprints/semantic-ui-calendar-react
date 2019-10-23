@@ -1,11 +1,12 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-define(["require", "exports", "lodash/isNil", "lodash/isArray", "lodash/compact", "moment"], function (require, exports, isNil_1, isArray_1, compact_1, moment_1) {
+define(["require", "exports", "lodash/isNil", "lodash/isArray", "lodash/isString", "lodash/compact", "moment"], function (require, exports, isNil_1, isArray_1, isString_1, compact_1, moment_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     isNil_1 = __importDefault(isNil_1);
     isArray_1 = __importDefault(isArray_1);
+    isString_1 = __importDefault(isString_1);
     compact_1 = __importDefault(compact_1);
     moment_1 = __importDefault(moment_1);
     exports.TIME_FORMAT = {
@@ -90,9 +91,9 @@ define(["require", "exports", "lodash/isNil", "lodash/isArray", "lodash/compact"
     function dateValueToString(value, dateFormat, locale) {
         // tslint:disable-next-line:no-debugger
         debugger;
-        // if (isString(value)) {
-        //   return value;
-        // }
+        if (isString_1.default(value)) {
+            return value;
+        }
         if (moment_1.default.isMoment(value)) {
             var _value = value.clone();
             _value.locale(locale);
