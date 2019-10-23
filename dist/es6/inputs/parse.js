@@ -88,7 +88,7 @@ export function dateValueToString(value, dateFormat, locale) {
         _value.locale(locale);
         return _value.format(dateFormat);
     }
-    var date = moment(value);
+    var date = moment(value, 'DD/MM/YYYY');
     if (date.isValid()) {
         date.locale(locale);
         return date.format(dateFormat);
