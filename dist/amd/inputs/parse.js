@@ -98,7 +98,7 @@ define(["require", "exports", "lodash/isNil", "lodash/isArray", "lodash/compact"
             _value.locale(locale);
             return _value.format(dateFormat);
         }
-        var date = moment_1.default(value, dateFormat);
+        var date = moment_1.default(value);
         if (date.isValid()) {
             date.locale(locale);
             return date.format(dateFormat);
